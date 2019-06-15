@@ -1,0 +1,11 @@
+version: '3'
+services:
+  code-server:
+    image: codercom/code-server
+    command: >
+      --allow-http
+      --no-auth
+    ports:
+      - "${code_server_bind_ip_port:-127.0.0.1:8443}:8443"
+    volumes:
+      - ./.data:/home/coder/project
